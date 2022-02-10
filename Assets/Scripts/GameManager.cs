@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -7,10 +9,12 @@ public class GameManager : MonoBehaviour
 
     public SugarCubeManager cubeManager;
     public UIMenuManager menuManager;
+    public LevelManager levelManager;
 
     public GameObject cube;
     public GameObject arrow;
-    public GameObject insideCup;
+
+    private GameObject _insideCup;
 
 
     float startPowerBuilding;
@@ -19,16 +23,32 @@ public class GameManager : MonoBehaviour
     private ArrowState _arrowState;
     public BonusStatus bonusStatus;
 
+    private int gameLevel;
+    public int startLevel = 0;
+
     // Start is called before the first frame update
     void Start()
     {
+        gameLevel = startLevel;
+        levelManager.LoadLevel(gameLevel);
         gameState = GameState.Menu;
-        bonusStatus = BonusStatus.Available;
 
         arrow.transform.position = cube.transform.position;
         _arrowState = ArrowState.PowerOff;
+
+        _insideCup = GameObject.Find("Inside Cup");
+        bonusStatus = BonusStatus.Available;
     }
 
+    internal void ResetCubeTo(Vector3 newPosition)
+    {
+        cube.transform.position = newPosition;
+    }
+
+    public void ResetCube()
+    {
+        cubeManager.ResetPosition();
+    }
 
     private void Update()
     {
@@ -37,6 +57,7 @@ public class GameManager : MonoBehaviour
             return;
         }
 
+
         if (_arrowState == ArrowState.Hidden)
         {
             arrow.SetActive(false);
@@ -44,10 +65,14 @@ public class GameManager : MonoBehaviour
 
         Vector3 mousePostion = GetWorldMousePos();
         Vector3 direction = (mousePostion - cube.transform.position).normalized;
-   
-        float angle =((direction.x < 0 )? 180 : 0)+ Mathf.Rad2Deg * Mathf.Atan(direction.y / direction.x);
-        arrow.transform.position = cube.transform.position;
-        arrow.transform.rotation = Quaternion.Euler(0, 0, angle);
+        float angle=((direction.x < 0 )? 180 : 0)+ Mathf.Rad2Deg * Mathf.Atan(direction.y / direction.x);;
+        if (_arrowState != ArrowState.Hidden)
+        {
+
+            arrow.transform.position = cube.transform.position;
+            arrow.transform.rotation = Quaternion.Euler(0, 0, angle);
+        }
+
 
 
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
@@ -95,6 +120,25 @@ public class GameManager : MonoBehaviour
         correctedPos.z = 0f;
 
         return correctedPos;
+    }
+
+
+
+    public void LoadNextLevel()
+    {
+        LoadLevel(gameLevel+1);
+    }
+
+
+    public void LoadLevel()
+    {
+        LoadLevel(gameLevel);
+    }
+
+    public void LoadLevel(int level)
+    {
+
+        levelManager.LoadLevel(level);
     }
 
 
