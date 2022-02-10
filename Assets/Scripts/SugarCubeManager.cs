@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SugarCubeManager : MonoBehaviour
@@ -8,10 +6,14 @@ public class SugarCubeManager : MonoBehaviour
     public GameManager gameManager;
     public GameObject sugarCube;
     public CubeState cubeState;
+    public UIMenuManager menuManager;
+
+    private bool _flyHit;
 
 
     void Start()
     {
+        _flyHit = false;
         cubeState = CubeState.Ready;
     }
 
@@ -38,9 +40,21 @@ public class SugarCubeManager : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("He shoots he scores");
-        gameManager.gameState = GameState.Ended;
-        cubeState = CubeState.InCup;
+
+        if (collision.name.Equals("Inside Cup")){
+            gameManager.gameState = GameState.Ended;
+            cubeState = CubeState.InCup; 
+            Debug.Log("He shoots he scores");
+            if (_flyHit)
+            {
+                Debug.Log("Bonus");
+                gameManager.bonusStatus = BonusStatus.Achieved;
+            }
+            menuManager.CompleteLevel();
+        } else if (collision.name.Equals("Fly1")){
+            Debug.Log("Swish");
+            _flyHit =true;
+        }
     }
 }
 
@@ -48,4 +62,9 @@ public class SugarCubeManager : MonoBehaviour
 public enum CubeState
 {
     Ready, Flying, InCup, Missing
+}
+
+public enum BonusStatus
+{
+    Available, Failed, Achieved
 }
