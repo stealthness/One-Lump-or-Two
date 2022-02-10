@@ -1,9 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class UIMenuManager : MonoBehaviour
 {
+    public GameManager gameManager;
+    public GameObject menuPanel;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,4 +20,16 @@ public class UIMenuManager : MonoBehaviour
     {
         
     }
+
+    internal void ClearMenu()
+    {
+        menuPanel.gameObject.SetActive(false);
+    }
+
+    public void OnStartGameButton()
+    {
+        ClearMenu();
+        gameManager.StartGame();
+    }
+
 }

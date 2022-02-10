@@ -1,4 +1,4 @@
-# This .gitignore file should be placed at the root of your Unity project directory
+e# This .gitignore file should be placed at the root of your Unity project directory
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
@@ -13,7 +13,7 @@
 /[Pp]rivate Assets/
 /[Pp]rivate/
 /[Aa]ssets/[Pp]rivate/
-/[Aa]ssets/[Ll]ean[Tt]wean/
+/[Aa]ssets/[Ll]ean[Tt]ween/
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data

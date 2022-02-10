@@ -162,8 +162,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 552
-        width: 97
-        height: 93
+        width: 96
+        height: 88
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,13 +181,13 @@ TextureImporter:
       name: assetsheet_1
       rect:
         serializedVersion: 2
-        x: 338
-        y: 0
-        width: 494
-        height: 261
+        x: 349
+        y: 1
+        width: 483
+        height: 246
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 0, y: 0, z: 3, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -223,10 +223,10 @@ TextureImporter:
       name: assetsheet_3
       rect:
         serializedVersion: 2
-        x: 238
-        y: 421
-        width: 223
-        height: 218
+        x: 255
+        y: 447
+        width: 195
+        height: 186
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -245,9 +245,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 469
-        y: 426
-        width: 202
-        height: 210
+        y: 446
+        width: 195
+        height: 187
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -266,9 +266,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 680
-        y: 412
-        width: 209
-        height: 223
+        y: 447
+        width: 194
+        height: 188
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -286,10 +286,10 @@ TextureImporter:
       name: assetsheet_6
       rect:
         serializedVersion: 2
-        x: 895
-        y: 421
-        width: 199
-        height: 213
+        x: 899
+        y: 448
+        width: 195
+        height: 185
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -307,10 +307,10 @@ TextureImporter:
       name: assetsheet_7
       rect:
         serializedVersion: 2
-        x: 18
-        y: 59
-        width: 105
-        height: 434
+        x: 27
+        y: 68
+        width: 94
+        height: 404
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -328,10 +328,10 @@ TextureImporter:
       name: assetsheet_8
       rect:
         serializedVersion: 2
-        x: 113
-        y: 55
-        width: 65
-        height: 58
+        x: 126
+        y: 65
+        width: 34
+        height: 34
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -349,12 +349,12 @@ TextureImporter:
       name: assetsheet_9
       rect:
         serializedVersion: 2
-        x: 628
-        y: 345
-        width: 296
-        height: 48
+        x: 654
+        y: 356
+        width: 256
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
